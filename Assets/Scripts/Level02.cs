@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level02 : MonoBehaviour
 {
+    public GameObject target;
     bool VesselMoved;
     public WinLose WinLose;
     public Inventory Inventory;
@@ -46,7 +47,7 @@ public class Level02 : MonoBehaviour
         {
             if (Inventory.Object3)
             {
-                Hamster.SetActive(false);
+                Hamster.transform.position = target.transform.position;
             }
         }
        
