@@ -8,6 +8,15 @@ TagManager:
   - Flowerpot
   - Bucket
   - FirstDoor
+  - Fridge
+  - Alacena
+  - Vessel
+  - Water
+  - GardenDoor
+  - firstStairs
+  - Collectable2
+  - Collectable3
+  - Hamster
   layers:
   - Default
   - TransparentFX

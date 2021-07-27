@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class PointandClickRay : MonoBehaviour
 {
     public Level01 lvl1;
+    public Level02 lvl2;
     public Inventory Inventory;
     public float Length;
     public LayerMask Layer;
@@ -59,6 +60,33 @@ public class PointandClickRay : MonoBehaviour
                     {
                         lvl1.NextLevel();
                     }
+                }
+                if (Hit.transform.gameObject.tag == "Fridge")
+                {
+                    lvl2.Fridge = true;
+                }
+               
+                if (Hit.transform.gameObject.tag == "Alacena")
+                {
+                    lvl2.Alacena = true;
+                    
+                }
+               
+                if (Hit.transform.gameObject.tag == "Vessel")
+                {
+                    lvl2.Vessel = true;
+                }
+                if (Hit.transform.gameObject.tag == "Water")
+                {
+                    lvl2.Water = true;
+                }
+                if (Hit.transform.gameObject.tag == "GardenDoor")
+                {
+                    lvl2.GardenDoor = true;
+                }
+                if (Hit.transform.gameObject.tag == "firstStairs")
+                {
+                    lvl2.firstStairs = true;
                 }
                 Debug.Log(Hit.collider.name);
             }
