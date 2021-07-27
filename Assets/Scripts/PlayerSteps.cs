@@ -6,10 +6,9 @@ public class PlayerSteps : MonoBehaviour
 {
     public WinLose WinLose;
     public CharacterController CC;
-    public GameObject Player;
-    public float currentposition;
     public AudioSource HardSteps;
-    public float limit;
+    public AudioSource SoftSteps;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +18,15 @@ public class PlayerSteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentposition = Player.transform.position.x;
-        limit = CC.destiny + 10.0f;
-        if(CC.destiny > currentposition)
+        if (!CC.Catched)
+        {
+            SoftSteps.Play();
+        }
+        if (CC.Catched)
         {
             HardSteps.Play();
             WinLose.Lose();
+
         }
     }
 }

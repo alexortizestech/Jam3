@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class CharacterController : MonoBehaviour
 {
+    public bool Catched;
     public float current;
     NavMeshAgent agent;
     public float destiny;
@@ -12,6 +13,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Catched = false;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -33,7 +35,8 @@ public class CharacterController : MonoBehaviour
             
             if (limit>=10)
             {
-                Time.timeScale = 0;
+                Catched = true;
+               // Time.timeScale = 0;
             }
         }
         
