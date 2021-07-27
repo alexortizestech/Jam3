@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinLose : MonoBehaviour
+public class ObstacleHit : MonoBehaviour
 {
-    public CharacterController cc;
+    public WinLose WinLose;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +17,14 @@ public class WinLose : MonoBehaviour
         
     }
 
-    public void Lose()
+   public void OnTriggerEnter (Collider other)
     {
-        cc.enabled = false;
+        // Do whatever
     }
 
-    public void Win()
+    public void Fail()
     {
-
+        //do whatever
+        WinLose.Lose();
     }
 }

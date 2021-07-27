@@ -17,6 +17,13 @@ TagManager:
   - Collectable2
   - Collectable3
   - Hamster
+  - BrothersDoor
+  - FathersDoor
+  - Drawer
+  - Wardrobe
+  - Box
+  - Lever
+  - Collectable4
   layers:
   - Default
   - TransparentFX

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinLose : MonoBehaviour
+public class Level04 : MonoBehaviour
 {
-    public CharacterController cc;
+    
+    public WinLose WinLose;
+    public bool MyBed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,16 +16,13 @@ public class WinLose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MyBed)
+        {
+            WinLose.Win();
+        }
+
         
     }
 
-    public void Lose()
-    {
-        cc.enabled = false;
-    }
-
-    public void Win()
-    {
-
-    }
+   
 }

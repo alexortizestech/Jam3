@@ -7,6 +7,7 @@ public class PointandClickRay : MonoBehaviour
 {
     public Level01 lvl1;
     public Level02 lvl2;
+    public Level03 lvl3;
     public Inventory Inventory;
     public float Length;
     public LayerMask Layer;
@@ -88,6 +89,36 @@ public class PointandClickRay : MonoBehaviour
                 {
                     lvl2.firstStairs = true;
                 }
+                if (Hit.transform.gameObject.tag == "BrothersDoor")
+                {
+                    lvl3.BrothersDoor = true;
+                }
+                if (Hit.transform.gameObject.tag == "FathersDoor")
+                {
+                    lvl3.FathersDoor = true;
+                }
+                if (Hit.transform.gameObject.tag == "Drawer")
+                {
+                    lvl3.Drawer = true;
+                }
+                if (Hit.transform.gameObject.tag == "Wardrobe")
+                {
+                    lvl3.Wardrobe = true;
+                }
+                if (Hit.transform.gameObject.tag == "Box")
+                {
+                    lvl3.Box = true;
+                }
+                if (Hit.transform.gameObject.tag == "Lever")
+                {
+                    lvl3.Lever = true;
+                }
+                
+                if (Hit.transform.gameObject.tag == "PlayersDoor")
+                {
+                    lvl3.PlayersDoor = true;
+                }
+
                 Debug.Log(Hit.collider.name);
             }
         }
