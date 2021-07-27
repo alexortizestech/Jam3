@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Level01 : MonoBehaviour
 {
+    public GameObject firstDoor;
+    public GameObject flowerpot;
+    public Inventory Inventory;
     public WinLose WinLose;
     public AudioSource Sound1;
     public bool BucketMoved;
@@ -28,6 +31,8 @@ public class Level01 : MonoBehaviour
                 Right();
             }
         }
+
+        
     }
 
 
@@ -39,6 +44,11 @@ public class Level01 : MonoBehaviour
 
     public void Right()
     {
+        flowerpot.SetActive(false);
+    }
 
+    public void NextLevel()
+    {
+        firstDoor.SetActive(false);
     }
 }

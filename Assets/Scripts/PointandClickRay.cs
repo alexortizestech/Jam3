@@ -45,6 +45,21 @@ public class PointandClickRay : MonoBehaviour
                 {
                     lvl1.FlowerpotMoved = true;
                 }
+                if (Hit.transform.gameObject.tag == "Flowerpot")
+                {
+                    lvl1.FlowerpotMoved = true;
+                }
+                if (Hit.transform.gameObject.tag == "Bucket")
+                {
+                    lvl1.BucketMoved = true;
+                }
+                if (Hit.transform.gameObject.tag == "FirstDoor")
+                {
+                    if (Inventory.Object1)
+                    {
+                        lvl1.NextLevel();
+                    }
+                }
                 Debug.Log(Hit.collider.name);
             }
         }
