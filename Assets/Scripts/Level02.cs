@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level02 : MonoBehaviour
 {
+    bool VesselMoved;
     public WinLose WinLose;
     public Inventory Inventory;
     public GameObject Ves;
@@ -39,7 +40,7 @@ public class Level02 : MonoBehaviour
 
         if (Vessel)
         {
-            Ves.SetActive(false);
+            MoveVessel();
         }
         if (GardenDoor)
         {
@@ -65,6 +66,17 @@ public class Level02 : MonoBehaviour
     public void Wrong()
     {
         WinLose.Lose();
+    }
+
+    public void MoveVessel()
+    {
+        if (!VesselMoved)
+        {
+            Ves.transform.Translate(0.5f, 0.0f, 0.0f);
+            VesselMoved = true;
+
+        }
+       
     }
     public void NextLevel2()
     {

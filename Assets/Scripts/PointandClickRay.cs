@@ -29,18 +29,22 @@ public class PointandClickRay : MonoBehaviour
             {
                 if (Hit.transform.gameObject.tag == "Collectable1")
                 {
+                    Destroy(Hit.transform.gameObject); 
                     Inventory.Object1 = true;
                 }
                 if (Hit.transform.gameObject.tag == "Collectable2")
                 {
+                    Destroy(Hit.transform.gameObject);
                     Inventory.Object2 = true;
                 }
                 if (Hit.transform.gameObject.tag == "Collectable3")
                 {
+                    Destroy(Hit.transform.gameObject);
                     Inventory.Object3 = true;
                 }
                 if (Hit.transform.gameObject.tag == "Collectable4")
                 {
+                    Destroy(Hit.transform.gameObject);
                     Inventory.Object4 = true;
                 }
                 if (Hit.transform.gameObject.tag == "Flowerpot")
@@ -59,7 +63,7 @@ public class PointandClickRay : MonoBehaviour
                 {
                     if (Inventory.Object1)
                     {
-                        lvl1.NextLevel();
+                        lvl1.DoorOpen();
                     }
                 }
                 if (Hit.transform.gameObject.tag == "Fridge")
