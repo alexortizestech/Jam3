@@ -20,6 +20,7 @@ public class ObstacleHit : MonoBehaviour
    public void OnTriggerEnter (Collider other)
     {
         // Do whatever
+        Fail();
     }
 
     public void Fail()
