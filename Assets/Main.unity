@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 106009769}
   - component: {fileID: 106009768}
   - component: {fileID: 106009767}
+  - component: {fileID: 106009770}
   m_Layer: 0
   m_Name: Floor (1)
   m_TagString: Untagged
@@ -386,6 +387,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &106009770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106009766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0, z: 9.999999}
+  m_Center: {x: -5, y: -2.220446e-15, z: 4.9999995}
 --- !u!1 &116800740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b63933792d444549b14905035c4eac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  complete: 0
   target: {fileID: 1947864568}
   WinLose: {fileID: 724446910}
   Inventory: {fileID: 2079368433}
@@ -2964,7 +2979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290450728}
   m_LocalRotation: {x: -0, y: -0, z: 0.32300025, w: 0.9463989}
-  m_LocalPosition: {x: 11.83, y: -0.31, z: 0.62}
+  m_LocalPosition: {x: 11.83, y: -0.8, z: 0.62}
   m_LocalScale: {x: 6.6659026, y: 0.39897, z: 2.4604}
   m_Children: []
   m_Father: {fileID: 1002319194}
@@ -3041,6 +3056,7 @@ GameObject:
   - component: {fileID: 1377679280}
   - component: {fileID: 1377679279}
   - component: {fileID: 1377679278}
+  - component: {fileID: 1377679281}
   m_Layer: 0
   m_Name: Floor (2)
   m_TagString: Untagged
@@ -3109,6 +3125,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1377679281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377679277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0, z: 9.999999}
+  m_Center: {x: -5, y: -2.220446e-15, z: 4.9999995}
 --- !u!1 &1497720696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,6 +3633,7 @@ GameObject:
   - component: {fileID: 1690174223}
   - component: {fileID: 1690174222}
   - component: {fileID: 1690174221}
+  - component: {fileID: 1690174224}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -3672,6 +3702,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1690174224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690174220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0, z: 9.999999}
+  m_Center: {x: -5, y: -2.220446e-15, z: 4.9999995}
 --- !u!1001 &1708570501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5013,7 +5056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079368425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.6, y: 1.258, z: -0.955}
+  m_LocalPosition: {x: -0.81, y: 1.258, z: -0.955}
   m_LocalScale: {x: 0.4242492, y: 0.4242492, z: 0.4242492}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5095,7 +5138,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1001 &2096993519
 PrefabInstance:

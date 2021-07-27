@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level02 : MonoBehaviour
 {
+    public bool complete;
     public GameObject target;
     bool VesselMoved;
     public WinLose WinLose;
@@ -48,16 +49,17 @@ public class Level02 : MonoBehaviour
             if (Inventory.Object3)
             {
                 Hamster.transform.position = target.transform.position;
+                complete = true;
             }
         }
        
         if (firstStairs)
         {
-            if (!Hamster.activeSelf)
+            if (complete)
             {
                 NextLevel2();
             }
-            if (Hamster.activeSelf)
+            if (!complete)
             {
                 Wrong();
             }
