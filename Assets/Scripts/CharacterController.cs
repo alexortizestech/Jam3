@@ -5,7 +5,10 @@ using UnityEngine.AI;
 
 public class CharacterController : MonoBehaviour
 {
+    public float current;
     NavMeshAgent agent;
+    public float destiny;
+    public float limit;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        current = transform.position.x;
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -24,6 +28,14 @@ public class CharacterController : MonoBehaviour
             {
                 agent.SetDestination(hit.point);
             }
+            destiny = hit.point.x;
+            limit = destiny - current;
+            
+            if (limit>=10)
+            {
+                Time.timeScale = 0;
+            }
         }
+        
     }
 }
