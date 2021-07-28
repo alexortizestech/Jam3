@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Level03 : MonoBehaviour
 {
+    public bool WrongDone;
+    public AudioSource BrotherScream;
     public GameObject ColliderWD;
     public bool Floor;
     public bool outer;
@@ -51,7 +53,11 @@ public class Level03 : MonoBehaviour
                     Brth.transform.Rotate(0, -90, 0);
                     movedDoor1 = true;
                 }
-                Wrong();
+                if (!WrongDone)
+                {
+                    Wrong();
+                }
+                
             }
         }
 
@@ -112,7 +118,9 @@ public class Level03 : MonoBehaviour
     }
     public void Wrong()
     {
+        BrotherScream.Play();
         WinLose.Lose();
+        WrongDone = true;
     }
 
     public void NextLevel()

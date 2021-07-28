@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class CharacterController : MonoBehaviour
 {
+    
     public bool Catched;
     public float current;
     NavMeshAgent agent;
@@ -35,7 +36,7 @@ public class CharacterController : MonoBehaviour
             destiny = hit.point.x;
             limit = destiny - current;
             
-            if (limit>=10)
+            if (limit>=5)
             {
                 Catched = true;
                // Time.timeScale = 0;
@@ -44,11 +45,5 @@ public class CharacterController : MonoBehaviour
         
     }
 
-    private void LateUpdate()
-    {
-        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
-        {
-            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
-        }
-    }
+   
 }

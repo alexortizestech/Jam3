@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Level02 : MonoBehaviour
 {
+    public GameObject HamsterAnim;
+    public bool WrongDone;
+    public AudioSource HamsterSound;
+    bool FridgeDone;
+    public AudioSource FridgeSound;
     public GameObject AlacenaCerrado, AlacenaAbierto;
     public GameObject OpenFridge,ClosedFridge;
     public TestHamster TH;
@@ -20,6 +25,7 @@ public class Level02 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HamsterAnim.GetComponent<Animator>().Play("Sit");
         target.transform.position = new Vector3(-6.8f, 1.2f, 0.5f);
     }
 
@@ -28,14 +34,23 @@ public class Level02 : MonoBehaviour
     {
         if (Fridge)
         {
-            ClosedFridge.SetActive(false);
-            OpenFridge.SetActive(true);
-            Wrong();
+         if(!FridgeDone)
+            {
+                ClosedFridge.SetActive(false);
+                OpenFridge.SetActive(true);
+                Wrong();
+                FridgeDone = true;
+            }
+           
         }
 
         if (Water)
         {
+            if (!WrongDone)
+            {
+
             Wrong();
+            }
         }
 
         if (Alacena)
@@ -71,14 +86,22 @@ public class Level02 : MonoBehaviour
             }
             if (!complete)
             {
+                if (!WrongDone)
+                {
+
                 Wrong();
+                }
             }
         }
     }
 
     public void Wrong()
     {
+        HamsterAnim.GetComponent<Animator>().Play("Scream");
+        HamsterSound.Play();
+        FridgeSound.Play();
         WinLose.Lose();
+        WrongDone = true;
     }
 
     public void MoveVessel()

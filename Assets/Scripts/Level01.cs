@@ -65,7 +65,7 @@ public class Level01 : MonoBehaviour
     public void Failed()
     {
         flowerpot.transform.Translate(0.2f, 0.0f, 0.0f);
-        Sound1.Play();
+        Basura.Play();
         WinLose.Lose();
         myfunctionDone = true;
     }

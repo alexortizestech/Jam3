@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BrothersEnemies : MonoBehaviour
 {
+    public bool isDone;
+    public AudioSource scream;
     public WinLose WinLose;
     public bool isPlayer;
     public bool isEnemy;
@@ -18,7 +20,14 @@ public class BrothersEnemies : MonoBehaviour
     {
         if(isPlayer)
         {
-            WinLose.Lose();
+            if (!isDone)
+            {
+
+                scream.Play();
+                WinLose.Lose();
+                isDone = true;
+            }
+
         }
     }
 
