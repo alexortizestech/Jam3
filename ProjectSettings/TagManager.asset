@@ -26,6 +26,7 @@ TagManager:
   - Collectable4
   - PlayersDoor
   - Brother
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -19,8 +19,12 @@ public class ObstacleHit : MonoBehaviour
 
    public void OnTriggerEnter (Collider other)
     {
-        // Do whatever
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
         Fail();
+
+        }
+        
     }
 
     public void Fail()

@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3840101398706905260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3840101398706905262}
+  - component: {fileID: 3840101398706905263}
+  - component: {fileID: 3840101398706905297}
+  - component: {fileID: 3840101398706905296}
+  - component: {fileID: 3840101398706905299}
+  - component: {fileID: 3840101398706905298}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3840101398706905262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840101398706905260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 353, y: 198.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3840101398706905263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840101398706905260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c17f3d5e35fa9a43b4de39b94c44018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cc: {fileID: 0}
+--- !u!114 &3840101398706905297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840101398706905260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06d41096d86e0847bbe94d90d16540c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opendoor: 0
+  Door: {fileID: 0}
+  Buck: {fileID: 0}
+  flowerpot: {fileID: 0}
+  Inventory: {fileID: 0}
+  WinLose: {fileID: 3840101398706905263}
+  Sound1: {fileID: 0}
+  BucketMoved: 0
+  FlowerpotMoved: 0
+--- !u!114 &3840101398706905296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840101398706905260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b63933792d444549b14905035c4eac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlacenaCerrado: {fileID: 0}
+  AlacenaAbierto: {fileID: 0}
+  OpenFridge: {fileID: 0}
+  ClosedFridge: {fileID: 0}
+  TH: {fileID: 0}
+  target2: {fileID: 0}
+  complete: 0
+  target: {fileID: 0}
+  WinLose: {fileID: 3840101398706905263}
+  Inventory: {fileID: 0}
+  Ves: {fileID: 0}
+  Mueble: {fileID: 0}
+  Hamster: {fileID: 0}
+  Fridge: 0
+  Alacena: 0
+  Vessel: 0
+  Water: 0
+  GardenDoor: 0
+  firstStairs: 0
+--- !u!114 &3840101398706905299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840101398706905260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340f385b88ff81d42aa250724de314f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyDoor: {fileID: 0}
+  MyDoorMoved: 0
+  Brth: {fileID: 0}
+  movedDoor1: 0
+  TB: {fileID: 0}
+  speed: 0
+  MovedBox: 0
+  ObjectBox: {fileID: 0}
+  Draw: {fileID: 0}
+  WinLose: {fileID: 3840101398706905263}
+  Inventory: {fileID: 0}
+  BrothersDoor: 0
+  FathersDoor: 0
+  BathroomDoor: 0
+  Drawer: 0
+  Wardrobe: 0
+  Box: 0
+  Lever: 0
+  PlayersDoor: 0
+--- !u!114 &3840101398706905298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840101398706905260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad05d75d25d185f4dabb4fdaa18c9e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WinLose: {fileID: 3840101398706905263}
+  MyBed: 0
