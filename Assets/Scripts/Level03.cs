@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Level03 : MonoBehaviour
 {
+    public GameObject ColliderWD;
+    public bool Floor;
+    public bool outer;
+    public bool isHiding;
+    public GameObject Player;
+    public Transform Hide;
+    public GameObject ArmarioAbierto,ArmarioCerrado;
     public GameObject MyDoor;
     public bool MyDoorMoved;
     public GameObject Brth;
@@ -21,6 +28,8 @@ public class Level03 : MonoBehaviour
     void Start()
     {
         speed = 0.01f;
+        outer = true;
+        isHiding = false;
         
     }
 
@@ -76,8 +85,24 @@ public class Level03 : MonoBehaviour
 
         if (Wardrobe)
         {
-            //hide
+
+            if (!isHiding)
+            {
+                Hiding();
+                
+
+            }
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            if (!outer)
+            {
+                Out();
+                Floor = false;
+            }
+        }
+        
     }
 
     public void MoveBox()
@@ -93,5 +118,30 @@ public class Level03 : MonoBehaviour
     public void NextLevel()
     {
         //go to next level
+    }
+
+    public void Hiding()
+    {
+        ArmarioAbierto.SetActive(true);
+        ArmarioCerrado.SetActive(false);
+        Player.transform.position = Hide.position;
+        ColliderWD.SetActive(true);
+        outer = false;
+        Wardrobe = false;
+        isHiding = true;
+        
+
+
+    }
+
+    public void Out()
+    {
+       
+        ArmarioAbierto.SetActive(false);
+        ArmarioCerrado.SetActive(true);
+        ColliderWD.SetActive(false);
+        isHiding = false;
+        
+        outer = true;
     }
 }

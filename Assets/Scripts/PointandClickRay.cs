@@ -123,8 +123,11 @@ public class PointandClickRay : MonoBehaviour
                 {
                     lvl3.PlayersDoor = true;
                 }
-
-                Debug.Log(Hit.collider.name);
+                if (Hit.transform.gameObject.tag == "Floor")
+                {
+                    lvl3.Floor = true;
+                }
+                    Debug.Log(Hit.collider.name);
             }
         }
     }
