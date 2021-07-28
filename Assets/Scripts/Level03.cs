@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Level03 : MonoBehaviour
 {
+    public SkinnedMeshRenderer mr;
+    public AudioSource SonidoPuerta;
+    public bool NextDone;
     public bool WrongDone;
     public AudioSource BrotherScream;
     public GameObject ColliderWD;
@@ -81,7 +84,11 @@ public class Level03 : MonoBehaviour
             {
                 if (!MyDoorMoved)
                 {
-                NextLevel();
+                    if (!NextDone)
+                    {
+                        NextLevel();
+                    }
+               
                     MyDoor.transform.Rotate(0, -90, 0);
                     MyDoorMoved = true;
                 }
@@ -125,11 +132,14 @@ public class Level03 : MonoBehaviour
 
     public void NextLevel()
     {
+        SonidoPuerta.Play();
+        NextDone = true;
         //go to next level
     }
 
     public void Hiding()
     {
+        mr.enabled = false;
         ArmarioAbierto.SetActive(true);
         ArmarioCerrado.SetActive(false);
         Player.transform.position = Hide.position;
@@ -144,7 +154,7 @@ public class Level03 : MonoBehaviour
 
     public void Out()
     {
-       
+        mr.enabled = true;
         ArmarioAbierto.SetActive(false);
         ArmarioCerrado.SetActive(true);
         ColliderWD.SetActive(false);

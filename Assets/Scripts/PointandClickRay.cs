@@ -145,7 +145,7 @@ public class PointandClickRay : MonoBehaviour
                 if (Hit.transform.gameObject.tag == "Wardrobe")
                 {
                     PickSound.Play();
-                    Player.GetComponent<Animator>().Play("Hide");
+                    //Player.GetComponent<Animator>().Play("Hide");
                     lvl3.Wardrobe = true;
                 }
                 if (Hit.transform.gameObject.tag == "Box")
