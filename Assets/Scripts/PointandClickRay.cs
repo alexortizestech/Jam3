@@ -116,6 +116,7 @@ public class PointandClickRay : MonoBehaviour
                 if (Hit.transform.gameObject.tag == "Lever")
                 {
                     lvl3.Lever = true;
+                    Destroy(Hit.transform.gameObject);
                 }
                 
                 if (Hit.transform.gameObject.tag == "PlayersDoor")

@@ -13,6 +13,7 @@ public class Level03 : MonoBehaviour
     public bool MovedBox;
     public GameObject ObjectBox;
     public GameObject Draw;
+    public GameObject Draw2;
     public WinLose WinLose;
     public Inventory Inventory;
     public bool BrothersDoor, FathersDoor, BathroomDoor, Drawer, Wardrobe, Box, Lever,PlayersDoor;
@@ -29,6 +30,7 @@ public class Level03 : MonoBehaviour
         if (Drawer)
         {
             Draw.SetActive(false);
+            Draw2.SetActive(true);
         }
 
         if (BrothersDoor)
