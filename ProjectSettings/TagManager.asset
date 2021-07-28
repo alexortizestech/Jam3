@@ -24,6 +24,7 @@ TagManager:
   - Box
   - Lever
   - Collectable4
+  - PlayersDoor
   layers:
   - Default
   - TransparentFX

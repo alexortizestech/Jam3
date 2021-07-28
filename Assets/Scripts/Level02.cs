@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Level02 : MonoBehaviour
 {
+    public GameObject AlacenaCerrado, AlacenaAbierto;
+    public GameObject OpenFridge,ClosedFridge;
+    public TestHamster TH;
+    public Transform target2;
     public bool complete;
     public GameObject target;
     bool VesselMoved;
@@ -16,7 +20,7 @@ public class Level02 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        target.transform.position = new Vector3(-6.8f, 1.2f, 0.5f);
     }
 
     // Update is called once per frame
@@ -24,6 +28,8 @@ public class Level02 : MonoBehaviour
     {
         if (Fridge)
         {
+            ClosedFridge.SetActive(false);
+            OpenFridge.SetActive(true);
             Wrong();
         }
 
@@ -36,7 +42,8 @@ public class Level02 : MonoBehaviour
         {
             if (Inventory.Object2)
             {
-                Mueble.SetActive(false);
+                AlacenaCerrado.SetActive(false);
+                AlacenaAbierto.SetActive(true);
             }
         }
 
@@ -48,8 +55,11 @@ public class Level02 : MonoBehaviour
         {
             if (Inventory.Object3)
             {
-                Hamster.transform.position = target.transform.position;
-                complete = true;
+                //transform.position = target.transform.position,1.0f*Time.deltaTime;
+                // Hamster.transform.position=Vector3.MoveTowards(transform.position, target2.position, 0.5f);
+                // Hamster.transform.position = new Vector3(transform.position.x + target.transform.position.x, transform.position.y, transform.position.z);
+                TH.enabled=true;
+               complete = true;
             }
         }
        

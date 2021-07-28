@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Level03 : MonoBehaviour
 {
+    public GameObject MyDoor;
+    public bool MyDoorMoved;
+    public GameObject Brth;
+    public bool movedDoor1;
+    public TestBox TB;
+    public float speed;
+    public bool MovedBox;
+    public GameObject ObjectBox;
     public GameObject Draw;
     public WinLose WinLose;
     public Inventory Inventory;
@@ -11,6 +19,7 @@ public class Level03 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 0.01f;
         
     }
 
@@ -26,24 +35,39 @@ public class Level03 : MonoBehaviour
         {
             if (Drawer)
             {
+                if (!movedDoor1)
+                {
+                    Brth.transform.Rotate(0, -90, 0);
+                    movedDoor1 = true;
+                }
                 Wrong();
             }
         }
 
         if (Box)
         {
-            //move box
+            if (!MovedBox)
+            {
+                MoveBox();
+            }
+            
         }
         if (Lever)
         {
-            //move box with + velocity
+            TB.step = 0.01f;
         }
 
         if (PlayersDoor)
         {
+
             if (Box)
             {
+                if (!MyDoorMoved)
+                {
                 NextLevel();
+                    MyDoor.transform.Rotate(0, -90, 0);
+                    MyDoorMoved = true;
+                }
             }
 
         }
@@ -54,7 +78,11 @@ public class Level03 : MonoBehaviour
         }
     }
 
-
+    public void MoveBox()
+    {
+        TB.enabled = true;
+        MovedBox = true;
+    }
     public void Wrong()
     {
         WinLose.Lose();
