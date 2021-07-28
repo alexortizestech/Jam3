@@ -25,6 +25,7 @@ TagManager:
   - Lever
   - Collectable4
   - PlayersDoor
+  - Brother
   layers:
   - Default
   - TransparentFX
