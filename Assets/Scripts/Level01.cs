@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level01 : MonoBehaviour
 {
+    public AudioSource Basura;
    public bool opendoor;
     bool mybucketmove;
     bool rightdone;

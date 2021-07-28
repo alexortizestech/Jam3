@@ -18,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            target = new Vector2(mouse.x, transform.position.y);
+            target = new Vector2(mouse.x, mouse.y);
         }
 
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * 5f);

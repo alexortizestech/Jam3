@@ -13,8 +13,10 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         Catched = false;
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
     }
 
     // Update is called once per frame
@@ -40,5 +42,13 @@ public class CharacterController : MonoBehaviour
             }
         }
         
+    }
+
+    private void LateUpdate()
+    {
+        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+        {
+            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+        }
     }
 }
