@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WinLose : MonoBehaviour
 {
+    public GameObject WinMenu;
+    public GameObject LoseMenu;
     public GameObject Player;
     public bool isDone;
     public CharacterController cc;
@@ -21,13 +23,15 @@ public class WinLose : MonoBehaviour
 
     public void Lose()
     {
+        LoseMenu.SetActive(true);
         cc.enabled = false;
     }
 
     public void Win()
     {
+        WinMenu.SetActive(true);
         Player.GetComponent<Animator>().Play("Climb Bed");
-        Time.timeScale = 0;
+       // Time.timeScale = 0;
         isDone = true;
     }
 }

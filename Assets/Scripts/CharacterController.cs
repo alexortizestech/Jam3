@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class CharacterController : MonoBehaviour
 {
-    
+  
+    public GameObject Player;
     public bool Catched;
     public float current;
     NavMeshAgent agent;
@@ -23,6 +24,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         current = transform.position.x;
         if (Input.GetMouseButtonDown(0))
         {
@@ -36,10 +38,15 @@ public class CharacterController : MonoBehaviour
             destiny = hit.point.x;
             limit = destiny - current;
             
-            if (limit>=5)
+            if (limit>=5||limit<=-5)
             {
+                Player.GetComponent<Animator>().Play("Run");
                 Catched = true;
-               // Time.timeScale = 0;
+                // Time.timeScale = 0;
+            }
+            else
+            {
+                Player.GetComponent<Animator>().Play("Walk");
             }
         }
         

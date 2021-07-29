@@ -26,7 +26,7 @@ public class PointandClickRay : MonoBehaviour
         Player.GetComponent<Animator>().Play("Idle");
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            Player.GetComponent<Animator>().Play("Walk");
+            
             RaycastHit Hit;
             Ray Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(Ray, out Hit, Length, Layer))

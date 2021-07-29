@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerSteps : MonoBehaviour
 {
+    public GameObject FatherDialogue1, FatherDialogue2;
+    public float currentTime;
     public WinLose WinLose;
     public CharacterController CC;
     public AudioSource HardSteps;
@@ -24,6 +26,14 @@ public class PlayerSteps : MonoBehaviour
         }
         if (CC.Catched)
         {
+            
+            currentTime += Time.deltaTime;
+            FatherDialogue1.SetActive(true);
+            if (currentTime > 5)
+            {
+                FatherDialogue1.SetActive(false);
+                FatherDialogue2.SetActive(true);
+            }
             HardSteps.Play();
             WinLose.Lose();
 
