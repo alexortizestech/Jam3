@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Level02 : MonoBehaviour
 {
+    public GameObject TargetText;
+    public GameObject ControlText;
     public GameObject HamsterAnim;
     public bool WrongDone;
     public AudioSource HamsterSound;
@@ -66,10 +68,15 @@ public class Level02 : MonoBehaviour
         {
             MoveVessel();
         }
+        if (Inventory.Object3)
+        {
+            ControlText.SetActive(true);
+        }
         if (GardenDoor)
         {
             if (Inventory.Object3)
             {
+                ControlText.SetActive(false);
                 //transform.position = target.transform.position,1.0f*Time.deltaTime;
                 // Hamster.transform.position=Vector3.MoveTowards(transform.position, target2.position, 0.5f);
                 // Hamster.transform.position = new Vector3(transform.position.x + target.transform.position.x, transform.position.y, transform.position.z);
@@ -82,6 +89,7 @@ public class Level02 : MonoBehaviour
         {
             if (complete)
             {
+                TargetText.SetActive(true);
                 NextLevel2();
             }
             if (!complete)
@@ -93,6 +101,7 @@ public class Level02 : MonoBehaviour
                 }
             }
         }
+
     }
 
     public void Wrong()

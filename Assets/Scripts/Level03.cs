@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level03 : MonoBehaviour
 {
+    public GameObject ControlText;
     public SkinnedMeshRenderer mr;
     public AudioSource SonidoPuerta;
     public bool NextDone;
@@ -139,6 +140,7 @@ public class Level03 : MonoBehaviour
 
     public void Hiding()
     {
+        ControlText.SetActive(true);
         mr.enabled = false;
         ArmarioAbierto.SetActive(true);
         ArmarioCerrado.SetActive(false);
@@ -154,6 +156,7 @@ public class Level03 : MonoBehaviour
 
     public void Out()
     {
+        ControlText.SetActive(false);
         mr.enabled = true;
         ArmarioAbierto.SetActive(false);
         ArmarioCerrado.SetActive(true);

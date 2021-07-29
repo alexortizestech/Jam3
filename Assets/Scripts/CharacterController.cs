@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class CharacterController : MonoBehaviour
 {
   
-    public GameObject Player;
+    public GameObject Player; 
+    public GameObject PlayerPrefab;
     public bool Catched;
     public float current;
     NavMeshAgent agent;
@@ -47,6 +48,19 @@ public class CharacterController : MonoBehaviour
             else
             {
                 Player.GetComponent<Animator>().Play("Walk");
+            }
+
+
+
+
+            if (limit > 0)
+            {
+                PlayerPrefab.transform.Rotate(0, 0, 0);
+            }
+
+            if (limit < 0)
+            {
+                PlayerPrefab.transform.Rotate(0, -270, 0);
             }
         }
         
