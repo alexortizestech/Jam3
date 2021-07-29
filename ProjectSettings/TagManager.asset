@@ -27,6 +27,7 @@ TagManager:
   - PlayersDoor
   - Brother
   - Obstacle
+  - Bed
   layers:
   - Default
   - TransparentFX

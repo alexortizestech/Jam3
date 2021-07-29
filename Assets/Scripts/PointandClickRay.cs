@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PointandClickRay : MonoBehaviour
 {
+    public WinLose WinLose;
     public AudioSource PickSound;
     public GameObject Player;
     public Level01 lvl1;
@@ -25,8 +26,8 @@ public class PointandClickRay : MonoBehaviour
         Player.GetComponent<Animator>().Play("Idle");
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            
-           RaycastHit Hit;
+            Player.GetComponent<Animator>().Play("Walk");
+            RaycastHit Hit;
             Ray Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(Ray, out Hit, Length, Layer))
             {
@@ -172,7 +173,14 @@ public class PointandClickRay : MonoBehaviour
                 {
                     lvl3.Floor = true;
                 }
-                    Debug.Log(Hit.collider.name);
+                if (Hit.transform.gameObject.tag == "Bed")
+                {
+                    if (!WinLose.isDone)
+                    {
+                        WinLose.Win();
+                    }
+                }
+                Debug.Log(Hit.collider.name);
             }
         }
     }

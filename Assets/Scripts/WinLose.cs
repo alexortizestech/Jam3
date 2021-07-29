@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WinLose : MonoBehaviour
 {
+    public GameObject Player;
+    public bool isDone;
     public CharacterController cc;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,8 @@ public class WinLose : MonoBehaviour
 
     public void Win()
     {
-
+        Player.GetComponent<Animator>().Play("Climb Bed");
+        Time.timeScale = 0;
+        isDone = true;
     }
 }
